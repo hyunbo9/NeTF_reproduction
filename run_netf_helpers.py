@@ -767,9 +767,9 @@ def MCMC(loss, kernel_size, sampling_num, sampling_r):
     samples[:, 1] = np.round(samples[:,1] * N)
     samples = samples.astype(np.int) - 1
 
-    print("===========")
-    print("samples", samples, "samples size", samples.shape)
-    print("===========")
+    # print("===========")
+    # print("samples", samples, "samples size", samples.shape)
+    # print("===========")
 
     return samples
 
@@ -876,9 +876,9 @@ def MCMC_sampling(network_res, theta_min, theta_max, phi_min, phi_max, device, c
         pdf_map = F.conv3d(network_res, kernel, padding = int((kernel_size - 1) / 2))  # 왜 네트워크 result에 가우시안 분포를 씌우지? 이러면 장점이 뭐지?
         pdf_map = pdf_map.reshape(L,M,N)
 
-        print("============================")
-        print("pdf map", pdf_map)
-        print("============================")
+        # print("============================")
+        # print("pdf map", pdf_map)
+        # print("============================")
 
         pdf_map_numpy = pdf_map.cpu().numpy()
         # for k in range(pdf_map.shape[0]):
@@ -987,9 +987,9 @@ def MCMC_2(pdf_map, sampling_num, sampling_r, theta_min, theta_max, phi_min, phi
 
     samples = np.zeros([Samp_Num + Init_Num + 1, 2])
     init = np.random.random([1,2]) / 2 + 0.25    # 0.25 ~ 0.75
-    print("====================================")
-    print(init)
-    print("====================================")
+    # print("====================================")
+    # print(init)
+    # print("====================================")
     samples[0,:] = init
     q = lambda v: np.array([np.random.normal(v[0],sampling_radius ** 2), np.random.normal(v[1], sampling_radius ** 2)])
     uu = np.random.random(Samp_Num + Init_Num)
