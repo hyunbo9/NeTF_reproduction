@@ -1,5 +1,5 @@
 rng = 0
-datadir = ./data/fk_statue_meas_180_min_256_preprocessed.mat
+datadir = /media/NAS2/CIPLAB/users/hyunbo/NLOS/data/NeTF/fk_statue_meas_180_min_256_preprocessed.mat
     # zaragoza bunny 256: zaragozadataset/zaragoza256_preprocessed.mat
     # lct: LCT_mannequin_preprocessed.mat
     # fk: fk_statue_meas_180_min_256_preprocessed.mat
